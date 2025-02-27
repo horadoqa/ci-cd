@@ -4,7 +4,7 @@ Fluxo de um processo de CI/CD
 
 <div align="center">
     <img src="cicd.png">
-<div>
+</div>
 
 Os passos para configurar um processo de **CI/CD** (Integração Contínua e Entrega Contínua) podem variar dependendo das ferramentas e da infraestrutura utilizadas, mas o fluxo básico envolve algumas etapas principais. Aqui está um resumo dessas etapas:
 
