@@ -1,10 +1,10 @@
-# CI/CD (Integração Contínua e Entrega Contínua)
-
-Fluxo de um processo de CI/CD
+# [![CI/CD (Integração Contínua e Entrega Contínua)](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=CI%2FCD+(Integra%C3%A7%C3%A3o+Cont%C3%ADnua+e+Entrega+Cont%C3%ADnua))](https://git.io/typing-svg)
 
 <div align="center">
     <img src="cicd.png">
 </div>
+
+Fluxo de um processo de CI/CD
 
 Os passos para configurar um processo de **CI/CD** (Integração Contínua e Entrega Contínua) podem variar dependendo das ferramentas e da infraestrutura utilizadas, mas o fluxo básico envolve algumas etapas principais.
 
