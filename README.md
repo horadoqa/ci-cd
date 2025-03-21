@@ -12,7 +12,7 @@ Esses 8 passos fazem parte de um processo de CI/CD mais amplo, geralmente alinha
 
 ### 1. **PLAN (Planejar)**
    - **Descrição**: Essa fase envolve o planejamento de novos recursos, mudanças ou correções a serem feitas no sistema. É o momento de definir os requisitos do projeto, prioridades e alinhar a visão com a equipe e stakeholders.
-   - **Exemplo**: Uma equipe de desenvolvimento decide adicionar um novo recurso, como "autenticação por biometria" no aplicativo. Eles discutem como será implementado, quais serão os requisitos e as metas de lançamento.
+   - **Exemplo**: Uma equipe de desenvolvimento decide adicionar um novo recurso, como "visualização da senha" no aplicativo. Eles discutem como será implementado, quais serão os requisitos e as metas de lançamento.
 
 ### 2. **CODE (Codificar)**
    - **Descrição**: Na fase de codificação, os desenvolvedores escrevem o código para implementar as funcionalidades planejadas. É o estágio em que o trabalho de programação real acontece.
@@ -40,7 +40,7 @@ Esses 8 passos fazem parte de um processo de CI/CD mais amplo, geralmente alinha
 
 ### 8. **MEASURE (Medir)**
    - **Descrição**: A última fase do ciclo envolve a coleta e análise de dados sobre o comportamento do sistema em produção. Isso inclui medir a performance, a satisfação do usuário, erros ocorridos e outras métricas importantes. Essas informações são usadas para aprender e melhorar continuamente o processo de desenvolvimento.
-   - **Exemplo**: A equipe monitora métricas como o número de tentativas de autenticação biométrica bem-sucedidas, o tempo de resposta do sistema e o feedback dos usuários. Se necessário, ajustes e melhorias são feitas com base nos dados coletados.
+   - **Exemplo**: A equipe monitora métricas como o número de tentativas de autenticação bem-sucedidas, o tempo de resposta do sistema e o feedback dos usuários. Se necessário, ajustes e melhorias são feitas com base nos dados coletados.
 
 ---
 
