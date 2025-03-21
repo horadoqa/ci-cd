@@ -1,4 +1,4 @@
-# [![CI/CD (Integração Contínua e Entrega Contínua)](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=435&duration=3000&pause=1000&width=800&lines=CI%2FCD;Integra%C3%A7%C3%A3o+Cont%C3%ADnua;Entrega+Cont%C3%ADnua)](https://git.io/typing-svg)
+# [![Continuous Integration (CI) and Continuous Delivery (CD) ](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=435&duration=3000&pause=1000&width=800&lines=CI%2FCD;Continuous+Integration+(CI);Continuous+Delivery+(CD)+)](https://git.io/typing-svg)
 
 <div align="center">
     <img src="cicd.png">
