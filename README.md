@@ -6,48 +6,42 @@ Fluxo de um processo de CI/CD
     <img src="cicd.png">
 </div>
 
-Os passos para configurar um processo de **CI/CD** (Integração Contínua e Entrega Contínua) podem variar dependendo das ferramentas e da infraestrutura utilizadas, mas o fluxo básico envolve algumas etapas principais. Aqui está um resumo dessas etapas:
+Os passos para configurar um processo de **CI/CD** (Integração Contínua e Entrega Contínua) podem variar dependendo das ferramentas e da infraestrutura utilizadas, mas o fluxo básico envolve algumas etapas principais.
 
-### 1. **Configuração do Repositório de Código**
-   - **Repositório de Código (GitHub, GitLab, Bitbucket, etc.)**: O primeiro passo é garantir que seu código esteja em um repositório de controle de versão, como Git.
-   - **Branches**: Defina uma estratégia de branching, como o uso de uma branch principal (geralmente chamada de `main` ou `master`) e outras branches para recursos ou correções de bugs.
+Esses 8 passos fazem parte de um processo de CI/CD mais amplo, geralmente alinhado ao ciclo de vida do DevOps. A metodologia é focada na automação, colaboração e ciclos de feedback rápidos. Vamos detalhar cada um deles:
 
-### 2. **Configuração da Integração Contínua (CI)**
-   - **Ferramentas de CI**: Escolha uma ferramenta de CI como Jenkins, GitHub Actions, GitLab CI, CircleCI, Travis CI, etc.
-   - **Criação do arquivo de configuração do CI**: Este arquivo (geralmente YAML ou outro formato específico) define o pipeline de CI. Ele normalmente inclui os seguintes passos:
-     - **Instalação de Dependências**: Garantir que todas as dependências do projeto (por exemplo, pacotes npm, dependências do Python, etc.) sejam instaladas.
-     - **Execução de Testes**: Rodar testes unitários ou de integração para garantir que o código não quebre funcionalidades existentes.
-     - **Análise de Qualidade de Código**: Ferramentas de análise de código estático (como ESLint, SonarQube, etc.) podem ser integradas para verificar o estilo e a qualidade do código.
+### 1. **PLAN (Planejar)**
+   - **Descrição**: Essa fase envolve o planejamento de novos recursos, mudanças ou correções a serem feitas no sistema. É o momento de definir os requisitos do projeto, prioridades e alinhar a visão com a equipe e stakeholders.
+   - **Exemplo**: Uma equipe de desenvolvimento decide adicionar um novo recurso, como "autenticação por biometria" no aplicativo. Eles discutem como será implementado, quais serão os requisitos e as metas de lançamento.
 
-### 3. **Integração com o Repositório**
-   - **Acionadores de Pipeline**: O pipeline CI é normalmente acionado por eventos de *push* ou *pull request* no repositório de código, ou por eventos de merge. Isso garante que, a cada alteração, o código seja automaticamente testado e validado.
+### 2. **CODE (Codificar)**
+   - **Descrição**: Na fase de codificação, os desenvolvedores escrevem o código para implementar as funcionalidades planejadas. É o estágio em que o trabalho de programação real acontece.
+   - **Exemplo**: Os desenvolvedores começam a escrever o código para a autenticação biométrica, utilizando bibliotecas específicas para autenticação de impressões digitais ou reconhecimento facial no código.
 
-### 4. **Deploy de Teste (opcional)**
-   - Algumas equipes configuram pipelines de **deploy** em ambientes de teste ou staging automaticamente após a execução bem-sucedida dos testes. Isso permite que os desenvolvedores verifiquem as mudanças em um ambiente mais próximo do de produção.
+### 3. **BUILD (Compilar/Construir)**
+   - **Descrição**: Após o código ser escrito, ele precisa ser construído (ou compilado), o que significa transformar o código em um artefato executável. É a etapa em que se verifica se o código compila corretamente e se as dependências estão resolvidas.
+   - **Exemplo**: O código que foi escrito é compilado em um arquivo executável ou em um contêiner Docker, e são verificadas as dependências externas, como pacotes ou bibliotecas, garantindo que o código esteja pronto para ser testado.
 
-### 5. **Configuração da Entrega Contínua (CD)**
-   - **Pipeline de CD**: O pipeline de CD entra em ação após a integração contínua (ou como parte de um processo conjunto). O objetivo é automatizar o processo de deploy para ambientes de produção.
-   - **Ambientes de Produção/Staging**: Configure o pipeline para implantar o código nos servidores de produção ou em ambientes de staging.
-   - **Aprovação Manual (se necessário)**: Algumas organizações adicionam uma etapa de aprovação manual antes de lançar as mudanças em produção, como uma revisão de segurança ou validação por parte de um engenheiro de operações.
+### 4. **TEST (Testar)**
+   - **Descrição**: A fase de testes envolve a execução de testes automatizados para garantir que o código funcione como esperado. Isso pode incluir testes unitários, testes de integração, testes de aceitação e outros tipos.
+   - **Exemplo**: Após o código ser compilado, são executados testes automatizados (por exemplo, com JUnit ou PyTest) para verificar se a autenticação biométrica funciona corretamente e se não há regressões no sistema.
 
-### 6. **Deploy Automático em Produção**
-   - **Deploy Automatizado**: Após a aprovação (se necessário), o código é automaticamente implantado em produção. O processo de deploy pode incluir a construção de contêineres Docker, o uso de ferramentas como Kubernetes, ou a configuração de servidores de nuvem (AWS, Azure, Google Cloud, etc.).
-   - **Verificação Pós-deploy**: Algumas ferramentas de CD também podem incluir verificações automáticas após o deploy, como verificações de integridade do sistema ou testes de smoke para garantir que o sistema está funcionando corretamente.
+### 5. **RELEASE (Liberar)**
+   - **Descrição**: O código aprovado nos testes é preparado para ser liberado para o ambiente de produção. Durante essa fase, a equipe de desenvolvimento gera a versão do software que será disponibilizada para os usuários finais. É aqui que se organiza a versão do produto.
+   - **Exemplo**: A equipe gera uma versão "1.2.0" do aplicativo, que inclui a funcionalidade de autenticação biométrica, e se prepara para a implantação nos ambientes de produção e staging.
 
-### 7. **Monitoramento e Feedback**
-   - **Monitoramento**: Após o deploy, é crucial monitorar o desempenho e a integridade do sistema em produção usando ferramentas como Prometheus, Grafana, New Relic, Datadog, etc.
-   - **Feedback Rápido**: Caso algo dê errado após o deploy, um bom processo de CI/CD deve permitir a reversão rápida das mudanças ou aplicar hotfixes de maneira eficiente.
+### 6. **DEPLOY (Implantar)**
+   - **Descrição**: O código liberado é implantado em um ambiente de produção ou em outros ambientes, como staging, para que possa ser acessado pelos usuários finais. A implantação pode ser feita de maneira automatizada para garantir consistência.
+   - **Exemplo**: O código é implantado no ambiente de produção, onde a nova funcionalidade de autenticação biométrica é acessada pelos usuários. Ferramentas de orquestração como Kubernetes ou plataformas de CI/CD, como Jenkins ou GitLab CI, podem ser usadas para gerenciar o processo de implantação.
 
-### 8. **Automação e Melhoria Contínua**
-   - **Refinamento**: À medida que o time se acostuma com o processo de CI/CD, novos testes e etapas de automação podem ser adicionados para melhorar a qualidade, o desempenho e a segurança.
-   - **Iteração**: O processo de CI/CD deve ser iterativo. A cada nova versão do software, novas automações, melhorias e correções de bugs devem ser implementadas para manter o pipeline robusto e eficiente.
+### 7. **OPERATE (Operar)**
+   - **Descrição**: Depois que o código é implantado, a equipe deve monitorar o sistema em produção para garantir que ele esteja funcionando corretamente. Isso inclui a monitoração de performance, segurança e estabilidade, bem como o gerenciamento de incidentes ou falhas.
+   - **Exemplo**: Após a implantação da funcionalidade, os engenheiros de operações monitoram logs e métricas para garantir que não haja falhas no sistema e que o novo recurso de autenticação esteja funcionando bem para os usuários.
+
+### 8. **MEASURE (Medir)**
+   - **Descrição**: A última fase do ciclo envolve a coleta e análise de dados sobre o comportamento do sistema em produção. Isso inclui medir a performance, a satisfação do usuário, erros ocorridos e outras métricas importantes. Essas informações são usadas para aprender e melhorar continuamente o processo de desenvolvimento.
+   - **Exemplo**: A equipe monitora métricas como o número de tentativas de autenticação biométrica bem-sucedidas, o tempo de resposta do sistema e o feedback dos usuários. Se necessário, ajustes e melhorias são feitas com base nos dados coletados.
 
 ---
 
-### Ferramentas Comuns Usadas em CI/CD
-- **CI/CD Ferramentas**: Jenkins, GitLab CI, CircleCI, Travis CI, GitHub Actions.
-- **Gerenciamento de Dependências**: npm, Maven, Gradle, pip, Docker.
-- **Testes**: JUnit, Mocha, Jasmine, Selenium, Cypress.
-- **Deploy**: Kubernetes, Docker, AWS CodeDeploy, Google Cloud, Heroku.
-
-Ao configurar CI/CD, a chave é a automação. Quanto mais você automatiza o processo de teste, integração e deploy, mais ágil será o desenvolvimento e a entrega de novos recursos.
+Esses 8 passos formam um ciclo contínuo que permite a evolução constante do software de maneira rápida e confiável. Ao medir e operar em ciclos curtos, é possível melhorar a qualidade do produto e ajustar rapidamente a estratégia de desenvolvimento conforme os feedbacks.
